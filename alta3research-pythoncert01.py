@@ -23,14 +23,15 @@ def main():
 
     #Set initial hazards to zero
     hazard= 0
-    #For loop iterates through the dictionary for each near earth object.
+    #For loop iterates through the dictionary for each date in near earth object.
     for date in data["near_earth_objects"]:
+        #Iterate through each value under the date looking for "Is potentially hazardous"
         for dict in data["near_earth_objects"][date]:
-            #Keeps a tally of each occurrence of "is_potentially_hazardous_asteroid"
+            #Increment counter by one for each occurrence of "is_potentially_hazardous_asteroid"
             if "is_potentially_hazardous_asteroid":      
                 hazard += 1
 
-    #Print the total number of hazardous asteroids
+    #Print the total number of potentially hazardous asteroids
     print("The number of hazardous asteroids is: " + str(hazard))
    
 
